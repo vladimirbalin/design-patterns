@@ -26,15 +26,15 @@ class FundamentalPatternsController
         $name = 'Делегирование';
 
         $instance = new AppMessenger();
-        $instance->setSender('sender@mail.ru')
-            ->setRecipient('recipient@mail.com')
-            ->setMessage('message')
-            ->send();
+        $instance->setSender('sender@mail.ru');
+        $instance->setRecipient('recipient@mail.com');
+        $instance->setMessage('message');
+        $instance->send();
 
-        $instance->bySms()
-            ->setSender('sender')
-            ->setRecipient('blender')
-            ->setMessage('gender')
-            ->send();
+        $instance->bySms();
+        $instance->setSender('sender');
+        $instance->setRecipient('blender');
+        $instance->setMessage('gender');
+        $instance->send();
     }
 }

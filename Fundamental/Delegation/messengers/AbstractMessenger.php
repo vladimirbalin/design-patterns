@@ -7,22 +7,19 @@ abstract class AbstractMessenger implements MessengerInterface
     protected $recipient;
     protected $message;
 
-    public function setSender($value): MessengerInterface
+    public function setSender($value): void
     {
         $this->sender = $value;
-        return $this;
     }
 
-    public function setRecipient($value): MessengerInterface
+    public function setRecipient($value): void
     {
         $this->recipient = $value;
-        return $this;
     }
 
-    public function setMessage($value): MessengerInterface
+    public function setMessage($value): void
     {
         $this->message = $value;
-        return $this;
     }
 
     public function send(): bool

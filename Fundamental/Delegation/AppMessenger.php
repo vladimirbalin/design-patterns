@@ -22,21 +22,23 @@ class AppMessenger
         return $this;
     }
 
-    public function setSender($value): MessengerInterface
+    public function setSender($value): void
     {
         $this->messenger->setSender($value);
-        return $this->messenger;
     }
 
-    public function setRecipient($value): MessengerInterface
+    public function setRecipient($value): void
     {
         $this->messenger->setRecipient($value);
-        return $this->messenger;
     }
 
-    public function setMessage($value): MessengerInterface
+    public function setMessage($value): void
     {
         $this->messenger->setMessage($value);
-        return $this->messenger;
+    }
+
+    public function send(): bool
+    {
+        return $this->messenger->send();
     }
 }
