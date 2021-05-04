@@ -20,4 +20,21 @@ class FundamentalPatternsController
         $item->deleteProperty('frame');
 
     }
+
+    public function delegation()
+    {
+        $name = 'Делегирование';
+
+        $instance = new AppMessenger();
+        $instance->setSender('sender@mail.ru')
+            ->setRecipient('recipient@mail.com')
+            ->setMessage('message')
+            ->send();
+
+        $instance->bySms()
+            ->setSender('sender')
+            ->setRecipient('blender')
+            ->setMessage('gender')
+            ->send();
+    }
 }
