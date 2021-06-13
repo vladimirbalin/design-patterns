@@ -10,23 +10,23 @@ class EventChannelJob
     {
         $newsChannel = new EventChannel();
 
-        $highgardenGroup = new Publisher('highgarder event', $newsChannel);
-        $winterfellNews = new Publisher('winterfell event', $newsChannel);
-        $winterfellTimes = new Publisher('winterfell event', $newsChannel);
+        $highgardenGroupPublisher = new Publisher('highgarder event', $newsChannel);
+        $winterfellNewsPublisher = new Publisher('winterfell event', $newsChannel);
+        $winterfellTimesPublisher = new Publisher('winterfell event', $newsChannel);
 
-        $sansa = new Subscriber('Sansa Stark');
-        $john = new Subscriber('John Snow');
-        $arya = new Subscriber('Arya Stark');
-        $serseya = new Subscriber('Serseya Lannister');
+        $sansaSubscriber = new Subscriber('Sansa Stark');
+        $johnSubscriber = new Subscriber('John Snow');
+        $aryaSubscriber = new Subscriber('Arya Stark');
+        $serseyaSubscriber = new Subscriber('Serseya Lannister');
 
-        $newsChannel->subscribe('winterfell event', $sansa);
-        $newsChannel->subscribe('highgarden event', $john);
-        $newsChannel->subscribe('winterfell event', $john);
-        $newsChannel->subscribe('winterfell event', $arya);
-        $newsChannel->subscribe('highgarden event', $serseya);
+        $newsChannel->subscribe('winterfell event', $sansaSubscriber);
+        $newsChannel->subscribe('highgarden event', $johnSubscriber);
+        $newsChannel->subscribe('winterfell event', $johnSubscriber);
+        $newsChannel->subscribe('winterfell event', $aryaSubscriber);
+        $newsChannel->subscribe('highgarden event', $serseyaSubscriber);
 
-        $highgardenGroup->publish('highgarden content 1');
-        $winterfellNews->publish('winterfell content 1');
-        $winterfellTimes->publish('winterfell content 2');
+        $highgardenGroupPublisher->publish('highgarden content 1');
+        $winterfellNewsPublisher->publish('winterfell content 1');
+        $winterfellTimesPublisher->publish('winterfell content 2');
     }
 }
