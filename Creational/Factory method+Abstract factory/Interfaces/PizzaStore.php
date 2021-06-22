@@ -5,7 +5,6 @@ abstract class PizzaStore
 {
     public function orderPizza($type)
     {
-        $ingredients = $this->createPizzaIngredientsFactory();
         $pizza = $this->createPizza($type);
         $pizza->prepare();
         $pizza->bake();
