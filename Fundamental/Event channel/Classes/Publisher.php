@@ -3,7 +3,7 @@
 
 class Publisher implements PublisherInterface
 {
-    private EventChannelInterface $eventChannel;
+    private EventChannel $eventChannel;
     private string $topicType;
 
     public function __construct($topicType, $channel)

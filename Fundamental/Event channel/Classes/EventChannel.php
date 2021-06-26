@@ -1,9 +1,6 @@
 <?php
-include_once __DIR__.'/../interfaces/EventChannelInterface.php';
-include_once __DIR__.'/../interfaces/SubscriberInterface.php';
-include_once __DIR__.'/../interfaces/PublisherInterface.php';
 
-class EventChannel implements EventChannelInterface
+class EventChannel implements IEventChannel
 {
     private array $topics = [];
 
@@ -11,8 +8,6 @@ class EventChannel implements EventChannelInterface
     {
         $this->topics[$topicType][] = $subscriber;
         $msg = "{$subscriber->getName()} подписан(-а) на [{$topicType}]";
-
-//        \Debugbar::debug($msg);
     }
 
     public function publish($topicType, $newsContent): bool
@@ -20,7 +15,7 @@ class EventChannel implements EventChannelInterface
         if(empty($this->topics[$topicType])) return false;
 
         foreach ($this->topics[$topicType] as $subscriber){
-            /** @var SubscriberInterface $subscriber */
+            /** @var ISubscriberInterface $subscriber */
             $subscriber->notify($newsContent);
         }
         return true;

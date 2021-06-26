@@ -1,7 +1,7 @@
 <?php
 
 
-interface PublisherInterface
+interface IPublisherInterface
 {
     public function publish(string $content);
 }

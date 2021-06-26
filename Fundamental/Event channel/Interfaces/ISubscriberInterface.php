@@ -1,7 +1,7 @@
 <?php
 
 
-interface SubscriberInterface
+interface ISubscriberInterface
 {
     public function notify($content);
 

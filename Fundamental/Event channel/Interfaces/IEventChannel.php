@@ -1,7 +1,7 @@
 <?php
 
 
-interface EventChannelInterface
+interface IEventChannel
 {
     public function subscribe($topicType, $subscriber);
 

@@ -1,10 +1,7 @@
 <?php
-include_once __DIR__.'/classes/EventChannel.php';
-include_once __DIR__.'/classes/Publisher.php';
-include_once __DIR__.'/classes/Subscriber.php';
 
 
-class EventChannelJob
+class Application
 {
     public function run()
     {

@@ -1,7 +1,7 @@
 <?php
 
 
-class Subscriber implements SubscriberInterface
+class Subscriber implements ISubscriberInterface
 {
     private string $name = '';
 
@@ -13,7 +13,6 @@ class Subscriber implements SubscriberInterface
     public function notify($content)
     {
         $msg = "{$this->getName()} оповещается данными [{$content}]";
-        // \Debugbar::info($msg);
     }
 
     public function getName()
